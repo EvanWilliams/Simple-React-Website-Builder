@@ -1,0 +1,29 @@
+/* entry styles */
+.entry-title{
+    font-weight: normal;
+    margin: 0 0 5px;
+}
+@media(max-width:643px){
+    .entry-title{
+        font-size: 22px;
+        font-weight: bold;
+    }
+}
+.entry-header{
+    margin: 0 auto;
+    max-width: 844px;
+    width: 100%;
+}
+.entry-header{
+    margin-bottom: 30px;
+}
+@media(max-width: 885px){
+    .entry-header{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.disclaimer{
+    font-size: 16px;
+    margin: 24px 0px;
+}

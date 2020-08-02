@@ -1,0 +1,44 @@
+figure{
+    max-width:960px;
+    margin: 0;
+}
+
+figure img{
+    height: auto;
+    max-width: 100%;
+}
+
+.caption{
+    color: #220e10;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    margin: 0 0 24px;
+}
+
+hr{
+    background: url(../../assets/images/dotted-line.png) repeat center top;
+    background-size: 4px 4px;
+    border: 0;
+    height: 1px;
+    margin: 0 0 24px;
+}
+.entry-header,.entry-content,.entry-summary{
+    margin: 0 auto;
+    max-width: 844px;
+    width: 100%;
+}
+@media(max-width: 885px){
+    .entry-content,.entry-header{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.entry-content a{
+    color:#337ab8;
+    text-decoration: none;
+}
+.entry-content a:hover{
+    color:#123346;
+}

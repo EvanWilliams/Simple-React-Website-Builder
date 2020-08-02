@@ -1,0 +1,18 @@
+.build-box{
+    display: grid;
+    grid-template-rows: 20px 1fr;
+    border: 3px solid #c8c8c8;
+    .build-header{
+        border:none;
+    }
+    .construction-box{
+        min-height: 300px;
+        margin: 10px;
+        padding: 12px;
+        border: 1px solid #333333;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit,minmax(25px, 50px));
+        grid-row-gap: 20px;
+    }
+}

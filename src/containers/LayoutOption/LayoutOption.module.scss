@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Rubik'), 
+         url('../../assets/fonts/Rubik-Medium.ttf') format('truetype') /* Safari, Android, iOS */
+  }
+.over{
+    border: 3px dotted #FFF;
+}
+.cancel{
+    border: none;
+    grid-column: 2/ span 1;
+    grid-row: 1/ span 1;
+}
+.type{
+    pointer-events: none;
+    align-self: center;
+    grid-column: 1/ span 2;
+    grid-row: 1/ span 2;
+}
+.layout-option{
+    background:#123346;
+    color:white;
+    font-family: "Rubik",sans-serif;
+    font-weight:500;
+    text-transform: uppercase;
+    display:grid;
+    grid-template-columns: 1fr 25px;
+    grid-template-rows: 25px;
+}

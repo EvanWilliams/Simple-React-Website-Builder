@@ -1,0 +1,14 @@
+.column-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+@media(max-width: 643px){
+    .column-wrapper{
+        display: block;
+    }
+}
+#disclaimer{
+    clear: both;
+    text-align: center;
+    padding: 16px 0px;
+}
