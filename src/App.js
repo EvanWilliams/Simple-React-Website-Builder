@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, BrowserRouter} from 'react-router-dom';
 import './App.css';
 
-import Baseview from './views/thin-nav/baseview';
+import Baseview from './containers/PageGenerator/PageGenerator';
 import Sample from './views/SamplePages/Attention_Image_Info/Attention_Image_Info'
 import Footer from './views/footer/footer';
 function App() {

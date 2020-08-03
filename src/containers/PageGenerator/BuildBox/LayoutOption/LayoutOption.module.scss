@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 500;
     src: local('Rubik'), 
-         url('../../assets/fonts/Rubik-Medium.ttf') format('truetype') /* Safari, Android, iOS */
+         url('../../.././../assets/fonts/Rubik-Medium.ttf') format('truetype') /* Safari, Android, iOS */
   }
 .over{
     border: 3px dotted #FFF;
@@ -28,4 +28,8 @@
     display:grid;
     grid-template-columns: 1fr 25px;
     grid-template-rows: 25px;
+}
+.selected{
+    border: white solid 3px;
+    box-shadow: 0px 0px 0px 3px #83b0d1;
 }

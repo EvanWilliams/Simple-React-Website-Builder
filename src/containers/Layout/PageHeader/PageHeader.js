@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './PageHeader.module.scss';
-import WrappedComponent from '../../hoc/WrappedComponent/WrappedComponent';
+import WrappedComponent from '../../../hoc/WrappedComponent/WrappedComponent';
 
 const PageHeader = (props) => (
     <WrappedComponent>

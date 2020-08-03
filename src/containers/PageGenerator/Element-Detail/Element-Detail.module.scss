@@ -1,0 +1,22 @@
+@media (max-width:996px){
+    .element-detail{
+        grid-column: span 2;
+    }
+}
+@media (max-width:669px){
+    .element-detail{
+        grid-column: span 1;
+    }
+}
+.element-detail{
+    min-height: 300px;
+    border: 3px solid #c8c8c8;
+}
+.striped-box{
+    background: repeating-linear-gradient(
+    45deg,
+    #F7F7F7,
+    #f7f7f7 12px,
+    #c8c8c8 12px,
+    #c8c8c8 15px);
+}

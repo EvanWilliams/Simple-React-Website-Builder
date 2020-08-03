@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown} from '@fortawesome/free-solid-svg-icons'
-import './baseview.scss';
-import LayoutOption from '../../containers/LayoutOption/LayoutOption';
-import BuildBox from '../../containers/BuildBox/BuildBox';
-class Baseview extends Component {
+import './PageGenerator.scss';
+import LayoutOption from './BuildBox/LayoutOption/LayoutOption';
+import BuildBox from './BuildBox/BuildBox';
+import ElementDetail from './Element-Detail/Element-Detail';
+class PageGenerator extends Component {
 
     constructor() {
         super();
@@ -60,7 +61,7 @@ class Baseview extends Component {
                         </div>
                         <BuildBox
                         ></BuildBox>
-                        <div className="element-detail striped-box"></div>
+                        <ElementDetail></ElementDetail>
                     </div>
                     <div className="sample-rendering">
                         <div className="striped-box"></div>
@@ -76,4 +77,4 @@ const mapStateToProps = state => {
         selectedlayoutOptions: state.selectedLayoutOptions
     };
 }
-export default connect(mapStateToProps)(Baseview);
+export default connect(mapStateToProps)(PageGenerator);

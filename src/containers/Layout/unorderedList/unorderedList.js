@@ -1,5 +1,5 @@
 import React from 'react';
-import WrappedComponent from '../../hoc/WrappedComponent/WrappedComponent';
+import WrappedComponent from '../../../hoc/WrappedComponent/WrappedComponent';
 import classes from './unorderedList.module.scss';
 const UnorderedList = (props) =>
 (

@@ -1,10 +1,11 @@
 import * as actionTypes from './actionTypes';
+import { updateSelectedLayoutOption } from './BuildBox';
 
 const initialState = {
     layoutOptions:[
         {
-            "type":"Header Element",
-            "id":"HeaderElement"
+            "type":"Page Header",
+            "id":"PageHeader"
         },
         {
             "type":"Image Element",
@@ -23,12 +24,15 @@ const initialState = {
             "id":"LargeImageElement"
         }
     ],
-    selectedLayoutOptions:[]
+    selectedLayoutOptions:[],
+    selectedLayoutDetail:null,
+    selectedLayoutIndex: null
 };
 const reducer = (state = initialState, action) => {
 
     switch(action.type) {
         case actionTypes.ADD_LAYOUT_OPTION:
+            debugger;
             return{
                 ...state,
                 selectedLayoutOptions:[
@@ -37,15 +41,24 @@ const reducer = (state = initialState, action) => {
                 ]
             }
         case actionTypes.REMOVE_LAYOUT_OPTION: {
-            debugger;
+            let updatedSelectedLayoutDetail = {...state.selectedLayoutDetail}
+            let updatedselectedLayoutIndex = state.selectedLayoutIndex
             let updatedLayoutOptions = state.selectedLayoutOptions.filter((element) => {
-                return element.id != action.id
+                if(element.id === action.id){
+                    if(state.selectedLayoutDetail.id === action.id){
+                        updatedSelectedLayoutDetail = null;
+                        updatedselectedLayoutIndex = null;
+                    }
+                }
+                return element.id !== action.id
             });
             return{
                 ...state,
                 selectedLayoutOptions:[
                     ...updatedLayoutOptions,
-                ]
+                ],
+                selectedLayoutDetail: updatedSelectedLayoutDetail,
+                selectedLayoutIndex: updatedselectedLayoutIndex
             }
         }
         case actionTypes.SWAP_LAYOUT_OPTIONS: {
@@ -58,6 +71,37 @@ const reducer = (state = initialState, action) => {
                     ...updatedLayoutOptions,
                 ]
             }
+        }
+        case actionTypes.SELECT_LAYOUT_OPTION: {
+            let updatedLayoutOptions = state.selectedLayoutOptions.map((element,index) => {
+                let selected = false;
+                if(index === action.index){
+                    selected = true
+                }
+                return {
+                    ...element,
+                    selected: selected
+                }
+            })
+            return{
+                ...state,
+                selectedLayoutOptions: [
+                    ...updatedLayoutOptions
+                ],
+                selectedLayoutDetail: {...state.selectedLayoutOptions[action.index]},
+                selectedLayoutIndex: action.index
+                
+            }
+        }
+        case actionTypes.UPDATE_SELECTED_LAYOUT_OPTION: {
+            let updatedLayoutOptions = [...state.selectedLayoutOptions]
+            updatedLayoutOptions[state.selectedLayoutIndex]["detail_data"] = action.updatedDetail["detail_data"];
+            return{
+                ...state,
+                selectedLayoutOptions: [
+                    ...updatedLayoutOptions
+                ],
+                selectedLayoutDetail: action.updatedDetail,            }
         }
         default:
             return state
